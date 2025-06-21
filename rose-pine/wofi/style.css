@@ -1,0 +1,46 @@
+/* Rose Pine Wofi Theme */
+window {
+    background-color: rgba(25, 23, 36,.95); /* Soft dark background */
+    border-radius: 12px;
+    border: 1px solid #26233a; /* Subtle pink border */
+    font-family: "JetBrainsMono Nerd Font", monospace;
+}
+
+/* Input field */
+#input {
+    color: #e0def4; /* Light text */
+    background-color: rgba(28, 27, 39, 0.9);
+    border: 1px solid #908caa;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Entry items */
+#entry {
+    color: #e0def4;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+/* Selected entry */
+#entry:selected {
+    background-color: #c4a7e7;
+    font-color: #e0def4;
+    font-weight: 1;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+/* Scrollbar (optional) */
+#scroll {
+    background-color: transparent;
+}
+
+#scrollbar {
+    background-color: #191724;
+}
+
+#scrollbar:selected {
+    background-color: #ebbcba;
+}
+
