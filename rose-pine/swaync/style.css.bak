@@ -310,9 +310,9 @@ trough {
 }
 
 .widget-buttons-grid {
-  padding: 6px 2px;
+  padding: 2px 2px;
   border-radius: 4px;
-  background: @overlay;
+  background: @gold;
   margin: 0 0 0.75rem 0;
 }
 

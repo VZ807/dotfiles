@@ -51,7 +51,8 @@
   "clock": {
     "format": "󰅐 {:%T    %m/%d}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "interval": 1
+    "interval": 1,
+    "on-click": "hyprctl dispatch exec \"[float] gnome-calendar\"",
   },
   // Workspaces
   "hyprland/workspaces": {
@@ -107,12 +108,53 @@
   // Selection
   //
   "modules-center": [
-    "custom/spotify"
+    "mpris"
   ],
+"mpris": {
+	"format": "{player_icon} {title} - {artist}",
+	"format-paused": "{status_icon} <i>{title} - {artist}</i>",
+	"interval":0.7,
+	"tooltip":false,
+	"on-click": "playerctl play-pause",
+        "on-click_right": "spotify",
+        "smooth-scrolling-threshold": 7,
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+	"player-icons": {
+		"default": "⏸",
+	},
+	"status-icons": {
+		"paused": "▶",
+	},
+	// "ignored-players": ["firefox"]
+},
+"cava": {
+//        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 45,
+        "autosens": 1,
+        "sensitivity": 10,
+        "bars": 10,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": true,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                   "on-click-right": "mode"
+                   }
+    },
   //
   // Configuration
   //
   // Spotify
+	/*
   "custom/spotify": {
     "exec": "/usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py --player spotify",
     "format": "󰓇 {}",
@@ -122,7 +164,7 @@
     "smooth-scrolling-threshold": 10,
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous"
-  },
+  }, */
   /////////////////////////////////////
   //
   // Modules - right

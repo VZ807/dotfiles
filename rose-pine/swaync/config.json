@@ -53,11 +53,11 @@
       "actions": [
         {
           "label": "󰋋",
-          "command": "env GTK_THEME=Adwaita-dark pavucontrol"
+          "command": "pavucontrol"
         },
         {
           "label": "󰍬",
-          "command": "env GTK_THEME=Adwaita-dark pavucontrol"
+          "command": "pavucontrol"
         },
         {
           "label": "󰖩",
@@ -70,6 +70,10 @@
         {
           "label": "",
           "command": "nwg-look"
+        },
+        {
+          "label": "",
+          "command": "~/scripts/bluelightfilter.sh"
         }
       ]
     }
