@@ -1,9 +1,0 @@
-show=drun
-term=kitty
-prompt=Run:
-width=40%
-height=40%
-location=center
-allow_images=false
-insensitive=true
-
