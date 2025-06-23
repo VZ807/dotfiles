@@ -1,46 +1,71 @@
 /* Rose Pine Wofi Theme */
 window {
-    background-color: rgba(25, 23, 36,.95); /* Soft dark background */
-    border-radius: 12px;
-    border: 1px solid #26233a; /* Subtle pink border */
-    font-family: "JetBrainsMono Nerd Font", monospace;
+  background-color: rgba(25, 23, 36, 0.95); /* Soft dark background */
+  border-radius: 20px;
+  border: 2px solid #31748f; /* Subtle pink border */
+  font-family: "JetBrainsMono Nerd Font", monospace;
 }
 
 /* Input field */
 #input {
-    color: #e0def4; /* Light text */
-    background-color: rgba(28, 27, 39, 0.9);
-    border: 1px solid #908caa;
-    border-radius: 8px;
-    padding: 10px;
+  color: #e0def4; /* Light text */
+  background-color: rgba(28, 27, 39, 0.9);
+  border-radius: 30px;
+  min-width: 20px;
+  border-width: 0px;
+  padding-left: 10px;
+  margin-top: 3.8px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 3px;
 }
 
 /* Entry items */
 #entry {
-    color: #e0def4;
-    border-radius: 6px;
-    padding: 6px;
+  transition: background-color 0.5s ease-in-out;
+  color: #e0def4;
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 5px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 2px;
 }
 
 /* Selected entry */
 #entry:selected {
-    background-color: #c4a7e7;
-    font-color: #e0def4;
-    font-weight: 1;
-    margin-left: 4px;
-    margin-right: 4px;
+  background-color: #26233a;
+  padding: 6px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  color: #e0def4;
+  border-radius: 20px;
+  text-shadow: none;
+}
+
+#img:selected {
+  background: none;
+}
+
+#highlight:selected {
+  border: 0px;
+}
+
+#text:selected {
+  background: none;
+  color: #e0def4;
 }
 
 /* Scrollbar (optional) */
 #scroll {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #scrollbar {
-    background-color: #191724;
+  background-color: #191724;
 }
 
 #scrollbar:selected {
-    background-color: #ebbcba;
+  background-color: #ebbcba;
 }
-
