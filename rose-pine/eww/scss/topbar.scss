@@ -17,7 +17,7 @@ $highlight-high: #524f67;
 
 .body {
   background-color: $back;
-  border-radius: 18px;
+  border-radius: 30px;
 }
 
 tooltip.background {
@@ -45,7 +45,7 @@ menu {
 }
 
 .applauncher {
-  background-color: $back;
+  background-color: transparent;
   color: $iris;
   font-size: 18px;
   margin-left: 4px;
@@ -55,7 +55,7 @@ menu {
 }
 
 .powermenu {
-  background-color: rgba(25, 23, 36, 0.95);
+  background-color: transparent;
   color: $iris;
   font-size: 18px;
   padding: 0 12px 0px 12px;

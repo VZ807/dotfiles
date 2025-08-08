@@ -23,6 +23,7 @@ window {
 /* Entry items */
 #entry {
   transition: background-color 0.5s ease-in-out;
+  transition: color 0.5s ease;
   color: #e0def4;
   background-color: transparent;
   border-radius: 20px;
@@ -39,7 +40,7 @@ window {
   margin-left: 4px;
   margin-right: 4px;
   margin-bottom: 4px;
-  color: #e0def4;
+  color: #9ccfd8;
   border-radius: 20px;
   text-shadow: none;
 }
@@ -53,8 +54,9 @@ window {
 }
 
 #text:selected {
+  transition: color 0.2s ease-out;
   background: none;
-  color: #e0def4;
+  color: #f6c177;
 }
 
 /* Scrollbar (optional) */

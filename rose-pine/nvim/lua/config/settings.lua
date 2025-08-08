@@ -61,14 +61,6 @@ vim.diagnostic.config({
 })
 
 
--- This will autoformat before writing any buffer
-vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function()
-        vim.lsp.buf.format({ async = false })
-    end,
-})
-
-
 
 
 -----------Treesitter----------
