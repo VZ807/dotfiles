@@ -1,6 +1,6 @@
 init=$(cat /sys/class/backlight/intel_backlight/brightness)
 echo $init
-init=$((($init*100) / 937))
+init=$((($init*100) / 62451))
 if (($init > 90)); then 
     eww update bright-sym=
 elif (($init > 80)); then 
@@ -28,7 +28,7 @@ inotifywait -mqe modify "$b" |while read -r _; do
     if [[ "$v" != "$l" ]] then 
         echo "$v"
         l="$v"
-        PERCENT=$((($v*100) / 937))
+        PERCENT=$((($v*100) / 62451))
 
 if (($PERCENT > 90)); then 
     eww update bright-sym=

@@ -69,13 +69,13 @@
                       :reveal bright
             (overlay
             (scale :class "bright-slider"
-                   :min 10
-                   :max 937
+                   :min 1
+                   :max 62452
                    :value bright-val
                    :onchange "brightnessctl set {}"
                    )
             (label  :style "color: #191724"
-                    :text {round((bright-val/937)*100,0) } 
+                    :text {round((bright-val/62452)*100,0) } 
                 )
 )))))
 

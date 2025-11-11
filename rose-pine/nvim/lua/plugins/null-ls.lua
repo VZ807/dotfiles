@@ -33,7 +33,7 @@ return {
 
         -- Setup mason-null-ls
         require("mason-null-ls").setup({
-            ensure_installed = { "prettier" }, -- will auto-install prettier if not present
+            ensure_installed = {"prettierd"}, -- will auto-install prettier if not present
             automatic_installation = true,     -- auto-install anything you use
             handlers = {},                     -- use default handlers
         })

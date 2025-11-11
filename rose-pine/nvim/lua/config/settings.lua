@@ -18,45 +18,86 @@ vim.o.scrolloff = 5
 
 vim.env.CLANGD_FLAGS = "--fallback-style=file"
 
+vim.opt.hlsearch = false   -- don't highlight search matches
+vim.opt.incsearch = true   -- optional: show matches as you type
 
 -----------Mason & nvimcmp(lsp)----------
+-- ===============================
+-- Mason Setup
+-- ===============================
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = { "ltex" }, -- add other servers here if needed
+    automatic_enable = true,       -- automatically enable installed servers
+})
 
-local lspconfig = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 
+
+-- ===============================
+-- nvim-cmp Setup
+-- ===============================
 local cmp = require("cmp")
+local luasnip = require("luasnip")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 cmp.setup({
     snippet = {
         expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
     mapping = cmp.mapping.preset.insert({
-        ["<C-J"] = cmp.mapping.select_next_item(),
-        ["<C-K"] = cmp.mapping.select_prev_item(),
+        ["<C-J>"] = cmp.mapping.select_next_item(),
+        ["<C-K>"] = cmp.mapping.select_prev_item(),
         ["<Tab>"] = cmp.mapping.confirm({ select = true }),
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "luasnip" }, -- if you want snippets
+        { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
     }),
 })
 
+-- ===============================
+-- LSP Configuration (New API)
+-- ===============================
+-- Configure LTEX
+vim.lsp.config("ltex", {
+    capabilities = capabilities,
+    settings = {
+        ltex = {
+            language = "en-US",
+        }
+    },
+    filetypes = { "text", "markdown" }, -- add more filetypes if needed
+})
+
+local venv = os.getenv("VIRTUAL_ENV") or "/home/vaz/.local/share/pipx/venvs/manimgl"
+vim.lsp.config("pyright",{
+    capabilities = capabilities,
+    settings = {
+      python = {
+      pythonPath = venv .. "/bin/python",
+      }
+    },
+})
+vim.lsp.enable("ltex")
+
+
+-- ===============================
+-- Diagnostics Configuration
+-- ===============================
 vim.diagnostic.config({
     virtual_text = {
-        prefix = "●", -- could be "■", "▎", "●", "", etc.
+        prefix = "●",  -- could be "■", "▎", "●", "", etc.
         spacing = 2,
-        source = "if_many", -- show "pyright" only if multiple sources
+        source = "if_many", -- show source only if multiple
     },
     signs = true,
     underline = true,
-    update_in_insert = false, -- prevents showing while typing
+    update_in_insert = false,
     severity_sort = true,
 })
 
@@ -75,6 +116,15 @@ require 'nvim-treesitter.configs'.setup {
         enable = true, -- Enable indentation based on Tree-sitter
     },
 }
+
+for _, group in ipairs({
+  "@lsp.type.keyword",
+  "@lsp.type.modifier",
+  "@lsp.type.modifier.java",
+}) do
+  vim.api.nvim_set_hl(0, group, { link = "Keyword" })
+end
+
 
 -----------Telescope----------
 local builtin = require('telescope.builtin')

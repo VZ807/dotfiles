@@ -7,7 +7,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias nv='nvim'
-# Prompt (Zsh has different syntax, this one mimics your Bash PS1)
+alias :=''
 PROMPT='[%n@%m %1~]$ '
 # Environment variables
 export GTK_IM_MODULE=ibus

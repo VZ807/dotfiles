@@ -9,7 +9,7 @@
 (defvar sound-sym " ")
 (deflisten sound-val :initial "0" "sh ./scripts/get-volume.sh")
 (deflisten bright-val :initial "937" "sh ./scripts/get-brightness-icon.sh")
-(defpoll battery :initial "0" :interval "1s" "cat /sys/class/power_supply/BAT1/capacity")
+(defpoll battery :initial "0" :interval "1s" "cat /sys/class/power_supply/BAT0/capacity")
 (defpoll battery-status :interval "1s" "./scripts/get-battery-status.sh")
 (defpoll clock :interval "1s" "date '+%H:%M:%S'")
 (defpoll date :interval "1s" "date '+%m/%d'")
