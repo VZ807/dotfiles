@@ -8,6 +8,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias nv='nvim'
 alias :=''
+alias brozer='zen-browser'
 PROMPT='[%n@%m %1~]$ '
 # Environment variables
 export GTK_IM_MODULE=ibus
@@ -101,5 +102,4 @@ setopt HIST_IGNORE_ALL_DUPS
 # Expire duplicate entries first when trimming history
 setopt HIST_EXPIRE_DUPS_FIRST
 
-export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
