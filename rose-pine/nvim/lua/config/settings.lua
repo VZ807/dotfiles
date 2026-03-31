@@ -4,8 +4,8 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 
 -- Set tab width to 4 spaces
-vim.opt.tabstop = 4      -- number of visual spaces per TAB
-vim.opt.shiftwidth = 4   -- number of spaces for each indentation
+vim.opt.tabstop = 2      -- number of visual spaces per TAB
+vim.opt.shiftwidth = 2   -- number of spaces for each indentation
 vim.opt.expandtab = true -- convert tabs to spaces
 
 -- Yank to system clipboard with <leader>y in normal and visual modes
@@ -14,6 +14,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { noremap = true, silent = true
 -- Optional: <leader>Y yanks whole line
 vim.keymap.set('n', '<leader>Y', '"+yy', { noremap = true, silent = true })
 
+vim.keymap.set('n', '<Alt>g', 'Glow', { noremap = true, silent = true })
 vim.o.scrolloff = 5
 
 vim.env.CLANGD_FLAGS = "--fallback-style=file"
