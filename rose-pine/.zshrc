@@ -1,5 +1,5 @@
 # ~/.zshrc
-
+#
 # Don't run if not interactive
 [[ $- != *i* ]] && return
 
@@ -9,12 +9,13 @@ alias grep='grep --color=auto'
 alias nv='nvim'
 alias :=''
 alias brozer='zen-browser'
+alias yzc='yazi $(pwd)'
 PROMPT='[%n@%m %1~]$ '
 # Environment variables
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export PATH="$PATH:/home/vaz/.local/bin"
-
+export GRIM_DEFAULT_DIR="~/Pictures/screenshots"
 export EDITOR=nvim
 export VISUAL=nvim
 # Starship prompt (use Zsh version)

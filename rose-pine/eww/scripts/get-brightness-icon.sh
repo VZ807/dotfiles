@@ -1,4 +1,4 @@
-init=$(cat /sys/class/backlight/intel_backlight/brightness)
+init=$(cat /sys/class/backlight/.../brightness)
 echo $init
 init=$((($init*100) / 62451))
 if (($init > 90)); then 
